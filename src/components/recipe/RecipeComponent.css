@@ -1,0 +1,28 @@
+.recipe-item {
+    list-style: none;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
+}
+
+.recipe-item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+
+.recipe-tags {
+    font-size: 14px;
+    color: #666;
+}

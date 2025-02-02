@@ -1,0 +1,21 @@
+.user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.user-profile-image {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.user-profile-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}

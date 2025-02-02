@@ -1,0 +1,10 @@
+.recipes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.recipes-container > * {
+    margin-bottom: 20px;
+}
