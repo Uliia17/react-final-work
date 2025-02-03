@@ -1,7 +1,6 @@
-// recipeSlice.ts
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {recipeService} from '../../../services/api.service.ts';
-import { IRecipe } from '../../../models/IRecipe.ts';
+import {IRecipe} from '../../../models/IRecipe.ts';
 
 
 interface RecipeState {
@@ -22,12 +21,12 @@ const initialState: RecipeState = {
 
 export const loadRecipes = createAsyncThunk(
     'recipeSlice/loadRecipes',
-    async (page: number, { rejectWithValue }) => {
+    async (page: number, {rejectWithValue}) => {
         try {
             const response = await recipeService.getAll(page, 30);
             return { recipes: response.recipes, total: response.total };
         } catch (error) {
-            return rejectWithValue('Ошибка при загрузке пользователей');
+            return rejectWithValue('Error loading recipes');
         }
     }
 );
@@ -57,6 +56,6 @@ const recipeSlice = createSlice({
     },
 });
 
-export const { setCurrentPage } = recipeSlice.actions;
+export const {setCurrentPage} = recipeSlice.actions;
 export default recipeSlice.reducer;
 

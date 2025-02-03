@@ -1,9 +1,9 @@
-import { createBrowserRouter } from 'react-router-dom';
-import { MainLayout } from '../layouts/MainLayout';
-import HomePage from '../pages/HomePage';
-import LoginPage from '../pages/LoginPage';
+import {createBrowserRouter} from 'react-router-dom';
+import {MainLayout} from '../layouts/MainLayout';
+import HomePage from '../pages/homePage/HomePage.tsx';
+import LoginPage from '../pages/loginPage/LoginPage.tsx';
 import UsersPage from '../pages/UsersPage';
-import RecipesPage from '../pages/RecipesPage';
+import RecipesPage from '../pages/recipePage/RecipesPage.tsx';
 import UserDetailsPage from '../pages/UserDetailsPage';
 import RecipeDetailsPage from '../pages/RecipeDetailsPage';
 import PrivateRoute from "./privateRoute.tsx";
@@ -12,48 +12,36 @@ import {AuthResourcesPage} from "../pages/AuthResourcesPage.tsx";
 
 export const routes = createBrowserRouter([
     {
-        path: '/',
-        element: <MainLayout />,
-        children: [
-            { index: true, element: <HomePage /> },
-            { path: 'login', element: <LoginPage /> },
-            {
-                path: 'users',
-                element: (
+        path: '/', element: <MainLayout />, children: [
+            {index: true, element: <HomePage/>},
+            {path: 'login', element: <LoginPage/>},
+            {path: 'users', element: (
                     <PrivateRoute>
-                        <UsersPage />
+                        <UsersPage/>
                     </PrivateRoute>
                 ),
             },
-            {
-                path: 'users/:id',
-                element: (
+            {path: 'users/:id', element: (
                     <PrivateRoute>
-                        <UserDetailsPage />
+                        <UserDetailsPage/>
                     </PrivateRoute>
                 ),
             },
-            {
-                path: 'recipes',
-                element: (
+            {path: 'recipes', element: (
                     <PrivateRoute>
-                        <RecipesPage />
+                        <RecipesPage/>
                     </PrivateRoute>
                 ),
             },
-            {
-                path: 'recipes/:id',
-                element: (
+            {path: 'recipes/:id', element: (
                     <PrivateRoute>
-                        <RecipeDetailsPage />
+                        <RecipeDetailsPage/>
                     </PrivateRoute>
                 ),
             },
-            {
-                path: 'auth/resources',
-                element: (
+            {path: 'auth/resources', element: (
                     <PrivateRoute>
-                        <AuthResourcesPage />
+                        <AuthResourcesPage/>
                     </PrivateRoute>
                 ),
             },

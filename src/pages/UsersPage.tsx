@@ -3,7 +3,7 @@ import UsersComponent from '../components/users/UsersComponent';
 
 const UsersPage: FC = () => {
     return (
-        <div className="container">
+        <div>
             <UsersComponent />
         </div>
     );

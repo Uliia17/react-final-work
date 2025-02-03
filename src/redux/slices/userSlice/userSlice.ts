@@ -1,6 +1,6 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { userService } from '../../../services/api.service';
-import { IUser } from '../../../models/IUser';
+import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {userService} from '../../../services/api.service';
+import {IUser} from '../../../models/IUser';
 
 interface UserState {
     users: IUser[];
@@ -20,12 +20,12 @@ const initialState: UserState = {
 
 export const loadUsers = createAsyncThunk(
     'userSlice/loadUsers',
-    async (page: number, { rejectWithValue }) => {
+    async (page: number, {rejectWithValue}) => {
         try {
             const response = await userService.getAll(page, 30);
             return { users: response.users, total: response.total };
         } catch (error) {
-            return rejectWithValue('Ошибка при загрузке пользователей');
+            return rejectWithValue('Error loading users');
         }
     }
 );
@@ -55,7 +55,7 @@ const userSlice = createSlice({
     },
 });
 
-export const { setCurrentPage } = userSlice.actions;
+export const {setCurrentPage} = userSlice.actions;
 export default userSlice.reducer;
 
 

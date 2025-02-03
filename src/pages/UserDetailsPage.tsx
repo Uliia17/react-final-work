@@ -3,7 +3,7 @@ import UserDetailsComponent from "../components/userDetails/UserDetailsComponent
 
 const UserDetailsPage: FC = () => {
     return (
-        <div className="container">
+        <div>
             <UserDetailsComponent />
         </div>
     );

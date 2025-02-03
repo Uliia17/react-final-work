@@ -1,0 +1,58 @@
+.background-image {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+    top: 0;
+    left: 0;
+}
+
+.home-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content {
+    position: absolute;
+    text-align: center;
+    color: white;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black; /* На случай, если фон не загрузится */
+}
+
+h1 {
+    font-size: 100px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+a {
+    color: seagreen;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+}
+
+
+
+

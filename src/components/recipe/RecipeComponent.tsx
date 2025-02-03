@@ -7,7 +7,7 @@ interface RecipeComponentProps {
     item: IRecipe;
 }
 
-const RecipeComponent:FC<RecipeComponentProps> = ({item}) => {
+const RecipeComponent: FC<RecipeComponentProps> = ({item}) => {
     return (
         <li className="recipe-item">
             <div className="recipe-content">
@@ -21,4 +21,6 @@ const RecipeComponent:FC<RecipeComponentProps> = ({item}) => {
 };
 
 export default RecipeComponent;
+
+
 

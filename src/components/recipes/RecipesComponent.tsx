@@ -6,7 +6,7 @@ import {useAppDispatch} from "../../redux/hooks/UseAppDispatch.tsx";
 import {loadRecipes, setCurrentPage} from "../../redux/slices/recipeSlice/recipeSlice.ts";
 import './RecipesComponent.css';
 
-const RecipesComponent:FC = () => {
+const RecipesComponent: FC = () => {
     const {recipes, currentPage, totalRecipes, loading, error} = useAppSelector((state) => state.recipeSlice);
     const dispatch = useAppDispatch();
     const itemsPerPage = 30;
@@ -38,5 +38,6 @@ const RecipesComponent:FC = () => {
 };
 
 export default RecipesComponent;
+
 
 

@@ -1,5 +1,4 @@
 import {FC} from 'react';
-import './PaginationComponent.css'
 
 interface PaginationProps {
     currentPage: number;
@@ -8,20 +7,20 @@ interface PaginationProps {
     onPageChange: (page: number) => void;
 }
 
-const PaginationComponent:FC<PaginationProps> = ({currentPage, totalItems, itemsPerPage, onPageChange}) => {
+const PaginationComponent: FC<PaginationProps> = ({currentPage, totalItems, itemsPerPage, onPageChange}) => {
     const totalPages = Math.ceil(totalItems/itemsPerPage);
 
     return (
         <div className="pagination">
             <button className="pagination-button"
-                onClick={() => onPageChange(currentPage - 1)}
-                disabled={currentPage === 0}
+                    onClick={() => onPageChange(currentPage - 1)}
+                    disabled={currentPage === 0}
             >
                 Back
             </button>
             <button className="pagination-button"
-                onClick={() => onPageChange(currentPage + 1)}
-                disabled={currentPage >= totalPages - 1}
+                    onClick={() => onPageChange(currentPage + 1)}
+                    disabled={currentPage >= totalPages - 1}
             >
                 Next
             </button>
@@ -30,6 +29,5 @@ const PaginationComponent:FC<PaginationProps> = ({currentPage, totalItems, items
 };
 
 export default PaginationComponent;
-
 
 
